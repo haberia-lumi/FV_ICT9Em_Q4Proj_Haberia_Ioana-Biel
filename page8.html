@@ -104,40 +104,99 @@
     <br>
 
     <div class="col-md-6">
-        <label for="comment">Quarter 1 (Rate us out of 5)</label>
-        <br>
-        <input type="number" class="form-control" required>
+        <label>Quarter 1</label> <br> <br>
+        <select class="form-select" id="first">
+            <option value="none">Choose</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</optjion>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</optjion>
+        </select>
     </div>
 
     <br>
 
     <div class="col-md-6">
-        <label for="comment">Quarter 2 (Rate us out of 5)</label>
-        <br>
-        <input type="number" class="form-control" required>
+        <label>Quarter 2</label> <br> <br>
+        <select class="form-select" id="second">
+            <option value="none">Choose</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</optjion>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</optjion>
+        </select>
     </div>
 
     <br>
 
     <div class="col-md-6">
-        <label for="comment">Quarter 3 (Rate us out of 5)</label>
-        <br>
-        <input type="number" class="form-control" required>
+        <label>Quarter 3</label> <br> <br>
+        <select class="form-select" id="third">
+            <option value="none">Choose</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</optjion>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</optjion>
+        </select>
     </div>
 
     <br>
 
     <div class="col-md-6">
-        <label for="comment">Quarter 4 (Rate us out of 5)</label>
-        <br>
-        <input type="number" class="form-control" required>
+        <label>Quarter 4</label> <br> <br>
+        <select class="form-select" id="fourth">
+            <option value="none">Choose</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</optjion>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</optjion>
+        </select>
     </div>
+
+    <script>
+        function Calculate(){
+                var q1 = Number(document.getElementById('first').value);
+                var q2 = Number(document.getElementById('second').value);
+                var q3 = Number(document.getElementById('third').value);
+                var q4 = Number(document.getElementById('fourth').value);
+
+                // Average Calculator
+                var rate = ((q1+q2+q3+q4)/4).toFixed(2);
+
+                // Switch Statement with Default
+                switch(true){
+                
+                case(rate>=4 && rate<=5):
+                alert("Your rating average is " + rate + " — Thank you for your wonderful rating!");
+                break;
+                
+                case(rate>=3 && rate<=3.99):
+                alert("Your rating average is " + rate + " — Thank you!");
+                break;
+                
+                case(rate>=2 && rate<=2.99):
+                alert("Your rating average is " + rate + " — We will be sure to improve our outputs.");
+                break;
+                
+                case(rate>=0 && rate<=1.99):
+                alert("Your rating average is " + rate + " — We will fix our outputs as soon as possible.");
+                break;
+            
+                default:
+                alert("Your rating average is " + rate + " — Thanks.");
+                }
+            }
+    </script>
 
     <br>
 
     <div class="col-md-6">
 
-        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="submit" class="btn btn-success" onclick="Calculate()">Submit</button>
     </div>
     <br><br>
 
